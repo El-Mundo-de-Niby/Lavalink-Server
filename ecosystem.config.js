@@ -7,7 +7,7 @@ module.exports = {
       script: 'java',
       args: ['-jar', 'Lavalink.jar'],
       // eslint-disable-next-line camelcase
-      cron_restart: '0 0 * * *', // A las 00:00
+      // cron_restart: '0 0 * * *', // A las 00:00
       env: {
         NODE_OPTIONS: '--no-warnings=ExperimentalWarning',
       },
