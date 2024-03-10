@@ -50,15 +50,19 @@ lavalink:
       #proxyPassword: "" # Password for basic authentication
 
 
-  # plugins:
-  #  - dependency: "com.dunctebot:skybot-lavalink-plugin:1.4.2" # DuncteBot lavalink plugin
-  #    repository: "https://m2.duncte123.dev/releases"
-  #  - dependency: "me.rohank05:lavalink-filter-plugin:0.0.2" # lavalink-filter plugin (echo filter)
-  #    repository: "https://jitpack.io"
-  #  - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.0.0-beta.4"
-  #    repository: "https://maven.topi.wtf/releases"
-  #  - dependency: "com.github.topi314.lavasearch:lavasearch-plugin:v1.0.0-beta.1"
-  #    repository: "https://maven.topi.wtf/releases"
+  plugins:
+    - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.0.1"
+      repository: "https://maven.lavalink.dev/releases" # this is optional for lavalink v4.0.0-beta.5 or greater
+      snapshot: false # set to true if you want to use snapshot builds (see below)
+    - dependency: "com.github.topi314.lavasearch:lavasearch-plugin:1.0.0"
+      repository: "https://maven.lavalink.dev/releases" # this is optional for lavalink v4.0.0-beta.5 or greater
+      snapshot: false # set to true if you want to use snapshot builds (see below)
+    - dependency: "me.rohank05:lavalink-filter-plugin:0.0.4" # replace x.x.x with the latest release tag!
+      repository: "https://jitpack.io"
+    - dependency: "com.dunctebot:skybot-lavalink-plugin:1.6.3"
+      repository: "https://maven.lavalink.dev/releases" # (optional on lavalink 4)
+      snapshot: false # (optional, tells lavalink to use the default snaptshot repository instead)
+
 
 
 plugins:
