@@ -5,7 +5,7 @@ lavalink:
   server:
     password: "youshallnotpass"
     sources:
-      youtube: true
+      youtube: false
       bandcamp: true
       soundcloud: true
       twitch: true
@@ -42,7 +42,7 @@ lavalink:
       retryLimit: -1 # -1 = use default lavaplayer value | 0 = infinity | >0 = retry will happen this numbers times
     youtubeConfig: # Required for avoiding all age restrictions by YouTube, some restricted videos still can be played without.
       email: "trashgarbage842@gmail.com" # Email of Google account
-      password: "?" # Password of Google account
+      password: "#Botsforyoutube123?" # Password of Google account
     #httpConfig: # Useful for blocking bad-actors from ip-grabbing your music node and attacking it, this way only the http proxy will be attacked
       #proxyHost: "localhost" # Hostname of the proxy, (ip or domain)
       #proxyPort: 3128 # Proxy port, 3128 is the default for squidProxy
@@ -51,7 +51,9 @@ lavalink:
 
 
   plugins:
-    - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.0.1"
+    - dependency: "dev.lavalink.youtube:youtube-plugin:1.2.0"
+      snapshot: false # Set to true if you want to use a snapshot version.
+    - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.1.1"
       repository: "https://maven.lavalink.dev/releases" # this is optional for lavalink v4.0.0-beta.5 or greater
       snapshot: false # set to true if you want to use snapshot builds (see below)
     - dependency: "com.github.topi314.lavasearch:lavasearch-plugin:1.0.0"
@@ -66,6 +68,14 @@ lavalink:
 
 
 plugins:
+  youtube:
+    enabled: true # Whether this source can be used.
+    allowSearch: true # Whether "ytsearch:" and "ytmsearch:" can be used.
+    allowDirectVideoIds: true # Whether just video IDs can match. If false, only complete URLs will be loaded.
+    allowDirectPlaylistIds: true # Whether just playlist IDs can match. If false, only complete URLs will be loaded.
+    # The clients to use for track loading. See below for a list of valid clients.
+    # Clients are queried in the order they are given (left-to-right)
+    clients: ["MUSIC", "ANDROID", "WEB"]
   lavasrc:
     providers:
       - "ytsearch:\"%ISRC%\""
