@@ -51,7 +51,7 @@ lavalink:
 
 
   plugins:
-    - dependency: "dev.lavalink.youtube:youtube-plugin:1.2.0"
+    - dependency: "dev.lavalink.youtube:youtube-plugin:1.5.2"
       snapshot: false # Set to true if you want to use a snapshot version.
     - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.1.1"
       repository: "https://maven.lavalink.dev/releases" # this is optional for lavalink v4.0.0-beta.5 or greater
@@ -89,6 +89,11 @@ plugins:
       deezer: true
       yandexmusic: true
       flowerytts: true # Enable Flowery TTS source
+    lyrics-sources:
+      spotify: true # Enable Spotify lyrics source
+      deezer: true # Enable Deezer lyrics source
+      youtube: true # Enable YouTube lyrics source
+      yandexmusic: true # Enable Yandex Music lyrics source
     spotify:
       clientId: "71b3cfc82948407ab320f9c9ba53fc23"
       clientSecret: "95cf9a7c67614cc3ace0bf8537a5f70b"
